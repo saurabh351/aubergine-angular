@@ -1,0 +1,43 @@
+#user-profile-screen{
+    .profile-img {
+        padding: 10px;
+        margin: 5px auto;
+    }
+
+    .badge1-alternate {
+        background-color: #fffae6;
+        border-color: #ece5c6;
+        padding: 4px 8px;
+        border: 1px solid transparent;
+        border-radius: 2px;
+
+        .badge1 {
+            margin-right: 3px;
+            margin-left: 2px;
+            width: 6px;
+        }
+
+        .total {
+            font-weight: 700;
+            color: #535a60;
+        }
+    }
+
+    .tags-card {
+        margin: 15px 0;
+
+        .sub-card {
+            background-color: #535a60;
+            text-align: center;
+            padding: 15px 0;
+            color: white;
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+
+        .sub-score {
+            padding: 15px 0;
+            text-align: center;
+        }
+    }
+}

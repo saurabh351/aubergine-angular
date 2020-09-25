@@ -1,0 +1,44 @@
+<div class="question-card">
+    <h2>Top Questions</h2>
+    <hr>
+    <div class="row mb-2" *ngFor="let fq of qList;">
+        <div class="col-md-3">
+            <div class="row text-center">
+                <div class="col-md-4 ques_link">
+                    <a href={{fq?.link}} target="_blank">
+                        <div>{{fq.score}}</div>
+                        <span>votes</span>
+                    </a>
+                </div>
+                <div class="col-md-4" [ngClass]="{'answered' : fq?.is_answered, 'ques_link' : !fq?.is_answered}">
+                    <a href={{fq?.link}} target="_blank">
+                        <div>{{fq?.answer_count}}</div>
+                        <span>answer</span>
+                    </a>
+                </div>
+                <div class="col-md-4 ques_link">
+                    <a href={{fq?.link}} target="_blank">
+                        <div>{{fq?.view_count}}</div>
+                        <span>views</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12"> <a href={{fq?.link}} target="_blank"> {{fq?.title}}</a> </div>
+                <div class="col-md-12 ques-tags">
+                    <span *ngFor="let tags of fq?.tags" class="badge badge-secondary m-1">{{tags}}</span>
+                    <a href='{{fq?.owner?.link}}' target="_blank">
+                        modified at {{fq?.last_activity_date | date: 'MMMM d, y, h:mm a' }}
+                    </a>
+                    <a [routerLink]="['/users', fq?.owner?.user_id]" target="_blank">
+                        {{fq?.owner?.display_name}}
+                    </a>
+                    <span> {{fq?.owner?.reputation}}</span>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>

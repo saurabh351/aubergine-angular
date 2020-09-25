@@ -1,0 +1,59 @@
+<div id="user-profile-screen">
+    <h1>User Profile</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="profile-img">
+                    <img src={{userDetails?.profile_image}} width="250" height="250" class="rounded float-left"
+                        alt="Cinque Terre">
+                </div>
+                <div class="text-center">
+                    <p class="text-center">{{userDetails?.reputation || 0}} REPUTATION</p>
+                    <div class="row m-3">
+                        <div class="col-md-4">
+                            <div class="badge1-alternate">
+                                <span class="badge1"></span>
+                                <span class="total">{{userDetails.badge_counts?.bronze || 0}}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="badge1-alternate">
+                                <span class="badge1"></span>
+                                <span class="total">{{userDetails.badge_counts?.gold || 0}}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="badge1-alternate">
+                                <span class="badge1"></span>
+                                <span class="total">{{userDetails.badge_counts?.silver || 0}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="d-sm-none">
+        </div>
+        <div class="col-sm-8">
+            <h3> <strong> {{userDetails?.display_name}} </strong></h3>
+            <div>Location: <span> {{userDetails?.location}} </span></div>
+            <div *ngIf="userDetails?.website_url">Website: <a href={{userDetails.website_url}} target="_blank"> {{userDetails.website_url}} </a> </div>
+        </div>
+    </div>
+    <div class="tags-card">
+        <h2>Top Tags</h2>
+        <hr>
+        <div class="row mt-1" *ngFor="let tags of userTagsList">
+            <div class="col-md-3">
+                <div class="sub-card">
+                    {{tags.name}}
+                </div>
+            </div>
+            <div class="col-md-9 sub-score">
+                Score {{tags.count}}
+            </div>
+        </div>
+    </div>
+    <app-question-list [qList]="questionsOnUserList"></app-question-list>
+</div>
+<br>

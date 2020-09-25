@@ -1,0 +1,31 @@
+.question-card {
+    margin: 15px 0;
+
+    .ques-tags {
+        a {
+            font-size: 14px;
+            color: #999;
+            &:hover {
+                color: #007bff; 
+            }
+        }
+    }
+
+    .ques_link {
+        a {
+            font-size: 14px;
+            color: #999;
+            text-decoration: none;
+            
+            &:hover {
+                color: #007bff; 
+            }
+        }
+    }
+
+    .answered {
+        background-color: #5fba7d;
+    }
+    
+    
+}
